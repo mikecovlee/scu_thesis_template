@@ -71,6 +71,8 @@
 % \setlength{\belowcaptionskip}{-10pt}
 %设置字体
 \RequirePackage{xeCJK}
+% 手动载入xeCJKfntef包，用于兼容2.5以上的ctex版本
+\RequirePackage{xeCJKfntef}
 \RequirePackage{fontspec}
 % \setCJKmonofont{Simsun}
 % \setmainfont{Times New Roman}
