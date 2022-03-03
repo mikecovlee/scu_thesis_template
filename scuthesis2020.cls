@@ -376,11 +376,11 @@
 
 % 定义 \incite 命令，用于如“文献[1]”这样的引用
 \newcommand*{\incite}{}
-\DeclareRobustCommand*{\incite}[1]{
+\DeclareRobustCommand*{\incite}[2][]{
 	\begingroup
 	% \romannumeral-`\x
 	\setcitestyle{numbers}
-	\hspace{-1em}~\cite{#1}\hspace{-0.3em}
+	\hspace{-1em}~\cite[#1]{#2}\hspace{-0.3em}
 	\endgroup
 }
 
