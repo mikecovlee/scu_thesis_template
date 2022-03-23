@@ -23,7 +23,7 @@
 \newcommand{\kkfont}{}
 \DeclareOptionX{kfont}{\renewcommand{\kkfont}{#1}}
 % \DeclareOptionX*{\PackageWarning{scuthesis2020}{`\CurrentOption' ignored}}% For unknown options
-\ExecuteOptionsX{kfont=}% Preset keys, '' being the default here
+\ExecuteOptionsX{kfont=fandol}% Preset keys, '' being the default here
 \ProcessOptionsX\relax
 
 % 将文档类其他参数全部传递给 ctexbook 文档类。
@@ -73,72 +73,6 @@
 \RequirePackage{xeCJK}
 % 手动载入xeCJKfntef包，用于兼容2.5以上的ctex版本
 \RequirePackage{xeCJKfntef}
-\RequirePackage{fontspec}
-% \setCJKmonofont{Simsun}
-% \setmainfont{Times New Roman}
-% 识别系统类型
-\newcommand\k@fontset{\csname g__ctex_fontset_tl\endcsname}
-\ifthenelse{\equal{\k@fontset}{fandol}}{
-  \setmainfont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-  ]{texgyretermes}
-  \setsansfont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-  ]{texgyreheros}
-  \setmonofont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-    Scale          = MatchLowercase,
-  ]{texgyrecursor}
-}{
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-  \ifthenelse{\equal{\k@fontset}{mac}}{
-    \setmonofont[Scale=MatchLowercase]{Menlo}
-  }{
-    \setmonofont[Scale=MatchLowercase]{Courier New}
-  }
-}
-\ifthenelse{\equal{\k@fontset}{windows}}{
-  \xeCJKsetup{EmboldenFactor=2}
-  \IfFileExists{C:/bootfont.bin}{
-    \setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi_GB2312]{SimSun}
-    \setCJKfamilyfont{zhkai}[AutoFakeBold]{KaiTi_GB2312}
-  }{
-    \setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi]{SimSun}
-    \setCJKfamilyfont{zhkai}[AutoFakeBold]{KaiTi}
-  }
-  \setCJKsansfont[AutoFakeBold]{SimHei}
-  \setCJKfamilyfont{zhsong}[AutoFakeBold]{SimSun}
-  \setCJKfamilyfont{zhhei}[AutoFakeBold]{SimHei}
-}{}
-\ifthenelse{\equal{\k@fontset}{mac}}{
-  \setCJKmainfont[
-         UprightFont = * Light,
-            BoldFont = * Bold,
-          ItalicFont = Kaiti SC,
-      BoldItalicFont = Kaiti SC Bold,
-    ]{Songti SC}
-  \setCJKsansfont[BoldFont=* Medium]{Heiti SC}
-  \setCJKfamilyfont{zhsong}[
-         UprightFont = * Light,
-            BoldFont = * Bold,
-    ]{Songti SC}
-  \setCJKfamilyfont{zhhei}[BoldFont=* Medium]{Heiti SC}
-  \setCJKfamilyfont{zhkai}[BoldFont=* Bold]{Kaiti SC}
-  \xeCJKsetwidth{‘’“”}{1em}
-}{}
 
 %使用geometry调整边距
 \RequirePackage{geometry}
