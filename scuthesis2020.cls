@@ -3,7 +3,7 @@
 % 作者：LegendaryLeo
 % 修改人：Kevin T. Lee [hello@lidengju.com]
 % 修改人：Michael Lee [mikecovlee@163.com]
-% 修改日期：2025年3月10日
+% 修改日期：2025年3月13日
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{./Template/scuthesis2020}[2020/06/01]
 
@@ -242,15 +242,15 @@
 		{\makebox[4cm][c]{\text{学位论文完成时间}}}\\[0.5cm]
 		{\makebox[4cm][c]{\text{\@accomplishdate}}}
 	\end{tabular}
-	\\[30pt]
-	{
-		\zihao{5}
-		\songti
-		\begin{tabular}{cl}
-			{注意事项：} & \multicolumn{1}{c}{按照双盲评阅要求，送审论文中不包含声明、致谢以及攻读学位期间取得的研究成果，} \\
-			\textbf{}      & 所有与作者本人以及导师相关的信息，均须做匿名处理。
-		\end{tabular}
-	}
+	% \\[30pt]
+	% {
+	% 	\zihao{5}
+	% 	\songti
+	% 	\begin{tabular}{cl}
+	% 		{注意事项：} & \multicolumn{1}{c}{按照双盲评阅要求，送审论文中不包含声明、致谢以及攻读学位期间取得的研究成果，} \\
+	% 		\textbf{}      & 所有与作者本人以及导师相关的信息，均须做匿名处理。
+	% 	\end{tabular}
+	% }
 	}{}
 }
 
@@ -301,7 +301,7 @@
 }
 
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
-\RequirePackage[outdir=./]{epstopdf}
+% \RequirePackage[outdir=./]{epstopdf}
 
 % 使用hyperref宏包去除索引上的颜色标记
 \RequirePackage{hyperref}
